@@ -1,12 +1,12 @@
-import { Box } from '@mui/material'
 import CalendarBlock from '../CalendarBlock'
+import CityBlock from '../CityBlock'
 import BoxWrapper from '../styled'
 
-const UserInfo = () => {
-  return <BoxWrapper height="70%">
+const UserInfo = () => (
+  <BoxWrapper height="70%" sx={{ justifyContent: 'space-between' }}>
     <CalendarBlock />
-    <CityBlock />
+    <CityBlock city="Minsk" country="Belarus" />
   </BoxWrapper>
-}
+)
 
 export default UserInfo
