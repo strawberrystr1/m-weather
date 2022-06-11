@@ -15,5 +15,9 @@ export const TodoTime = styled(Typography)`
 export const TodoText = styled(Typography)`
   font-size: 22px;
   margin-left: 30px;
-  width: 80%;
+`
+
+export const TodoDescription = styled(Typography)`
+  font-size: 16px;
+  margin-left: 30px;
 `

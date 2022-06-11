@@ -1,8 +1,9 @@
 import { TextField } from '@mui/material'
+
+import APIChoiseBlock from '../APIChoiseBlock'
+
 import IProps from './types'
 import { BoxWrapper, City, Country } from './styled'
-import APIChoiseBlock from '../APIChoiseBlock'
-import { WHITE_COLOR } from '../../theme'
 
 const CityBlock = ({ city, country }: IProps) => (
   <BoxWrapper>
