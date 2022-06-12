@@ -8,6 +8,7 @@ import rootSaga from './sagas'
 import userReducer from './reducers/user'
 import todoReducer from './reducers/todos'
 import weatherReducer from './reducers/weather'
+import errorsReducer from './reducers/errors'
 
 const persistCongif = {
   key: 'root',
@@ -19,6 +20,7 @@ const rootReducer = combineReducers({
   user: userReducer,
   todo: todoReducer,
   weather: weatherReducer,
+  errors: errorsReducer,
 })
 
 const persistedReducer = persistReducer(persistCongif, rootReducer)

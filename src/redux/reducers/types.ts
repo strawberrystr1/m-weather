@@ -8,6 +8,7 @@ export interface IInitialUser {
   userError: boolean
   token: string
   currentCity: string
+  previousCity: string
 }
 
 export type IInitialWeather = {
@@ -15,4 +16,8 @@ export type IInitialWeather = {
     current: IWeatherStorageItem
     daily: IWeatherStorageItem[]
   }
+}
+
+export interface IInitialErrors {
+  cityError: string
 }

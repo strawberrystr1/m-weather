@@ -15,14 +15,24 @@ export type InitGenerator = Generator<
 >
 
 export type WeatherByIPGenerator = Generator<
-| TakeEffect
 | CallEffect<IIPResponse>
+| TakeEffect
+| PutEffect<{
+  type: string
+  payload: string
+}>,
+void,
+unknown
+>
+
+export type SetWeatherGenerator = Generator<
+| CallEffect<IIPResponse | Error>
+| SelectEffect
+| CallEffect<IOpenweatherResponse>
 | PutEffect<{
   type: string
   payload: string
 }>
-| SelectEffect
-| CallEffect<IOpenweatherResponse>
 | PutEffect<{
   type: string
   payload: IWeatherPayload
@@ -30,4 +40,5 @@ export type WeatherByIPGenerator = Generator<
 void,
 unknown
 >
+
 export type TokenGenerator = Generator<InitGeneratorFirstArg<string>, void, string>

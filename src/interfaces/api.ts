@@ -67,3 +67,12 @@ export interface IIPResponse {
   latitude: number
   longitude: number
 }
+
+export interface IGeolocationData {
+  results: {
+    city: string
+    country: string
+    lat: number
+    lon: number
+  }[]
+}

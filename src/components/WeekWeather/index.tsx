@@ -12,7 +12,7 @@ const WeekWeather = ({ weather }: IProps) => {
           today={false}
           day={weekDays[day.date]}
           temperature={day.temp}
-          key={day.temp}
+          key={weekDays[day.date]}
           icon={day.icon}
         />
       ))}
