@@ -1,5 +1,6 @@
 export default interface IProps {
   today: boolean
   day: string
-  temperature: string
+  temperature: number
+  icon?: string
 }

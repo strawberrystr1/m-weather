@@ -24,3 +24,46 @@ export interface ICalendarTodo {
   todo: string
   description: string
 }
+
+export interface IWeatherStorageItem {
+  temp: number
+  icon: string
+  description: string
+  date: number
+}
+
+export interface IWeatherPayload {
+  city: string
+  weather: {
+    current: IWeatherStorageItem
+    daily: IWeatherStorageItem[]
+  }
+}
+
+interface IOpenweatherWeather {
+  icon: string
+  description: string
+}
+
+interface IOpenweatherDailyItem {
+  temp: {
+    day: number
+  }
+  weather: IOpenweatherWeather[]
+  dt: number
+}
+export interface IOpenweatherResponse {
+  current: {
+    temp: number
+    weather: IOpenweatherWeather[]
+    dt: number
+  }
+  daily: IOpenweatherDailyItem[]
+}
+
+export interface IIPResponse {
+  country: string
+  city: string
+  latitude: number
+  longitude: number
+}

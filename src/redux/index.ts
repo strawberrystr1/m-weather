@@ -7,6 +7,7 @@ import { persistStore, persistReducer } from 'redux-persist'
 import rootSaga from './sagas'
 import userReducer from './reducers/user'
 import todoReducer from './reducers/todos'
+import weatherReducer from './reducers/weather'
 
 const persistCongif = {
   key: 'root',
@@ -17,6 +18,7 @@ const sagaMiddleware = createSagaMiddleware()
 const rootReducer = combineReducers({
   user: userReducer,
   todo: todoReducer,
+  weather: weatherReducer,
 })
 
 const persistedReducer = persistReducer(persistCongif, rootReducer)

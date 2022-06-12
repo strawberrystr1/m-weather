@@ -1,11 +1,16 @@
-import { ICalendarTodo } from './api'
+import { ICalendarTodo, IWeatherPayload } from './api'
 
-export default interface IDispatchUserAction {
+interface IDispatchAction {
   type: string
+}
+export default interface IDispatchUserAction extends IDispatchAction {
   payload: string
 }
 
-export interface IDispatchTodoAction {
-  type: string
+export interface IDispatchTodoAction extends IDispatchAction {
   payload: ICalendarTodo[]
+}
+
+export interface IDispatchWeatcherACtion extends IDispatchAction {
+  payload: IWeatherPayload
 }

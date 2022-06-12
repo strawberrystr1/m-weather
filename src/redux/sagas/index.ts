@@ -1,7 +1,9 @@
 import { all, call, spawn } from 'redux-saga/effects'
 
+import weatherSaga from './weatherSaga'
+
 export default function* () {
-  const sagas = [].map(saga => {
+  const sagas = [weatherSaga].map(saga => {
     return spawn(function* () {
       while (true) {
         try {

@@ -1,9 +1,10 @@
 import { Card, CardContent, CardMedia } from '@mui/material'
+import { OPENWEATHER_API_IMG_URL } from '../../constants/api'
 
 import { Day, Temperature } from './styled'
 import IProps from './types'
 
-const WeatherCard = ({ today, day, temperature }: IProps) => (
+const WeatherCard = ({ today, day, temperature, icon }: IProps) => (
   <Card
     sx={{
       display: 'flex',
@@ -21,7 +22,7 @@ const WeatherCard = ({ today, day, temperature }: IProps) => (
       <CardMedia
         component="img"
         sx={{ maxWidth: '70px' }}
-        image="http://openweathermap.org/img/wn/11n@2x.png"
+        image={`${OPENWEATHER_API_IMG_URL}${icon}@2x.png`}
         alt="weather icon"
       />
     )}

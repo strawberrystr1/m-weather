@@ -1,3 +1,4 @@
+import { GOOGLE_API_SCOPE, GOOGLE_USERID } from '../constants/api'
 import { IClientObject } from '../interfaces/api'
 import { AppDispatch } from '../redux'
 import { initUserError, receiveToken } from '../redux/actions/userActions'
@@ -12,9 +13,8 @@ export const getToken = () => {
 export const initClient = (dispatch: AppDispatch) => {
   try {
     client = google.accounts.oauth2.initTokenClient({
-      client_id:
-        '1083307641056-5mudfltja82dgrpqsgte4efiv0jn5kc7.apps.googleusercontent.com',
-      scope: 'https://www.googleapis.com/auth/calendar.readonly',
+      client_id: GOOGLE_USERID,
+      scope: GOOGLE_API_SCOPE,
       callback: (tokenResponse: any) => {
         token = tokenResponse.access_token
         dispatch(receiveToken(token))

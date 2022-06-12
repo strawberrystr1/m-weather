@@ -12,6 +12,7 @@ import { initClient } from '../api/initUser'
 import { RootState } from '../redux'
 
 import { BackgroundPicture, ContainerFront } from './styled'
+import { GOOGLE_URL, GOOGLE_USERID } from '../constants/api'
 
 function App() {
   const dispatch = useDispatch()
@@ -27,10 +28,9 @@ function App() {
     return () => window.removeEventListener('load', initProfile)
   }, [])
 
-  useScript('https://accounts.google.com/gsi/client', () => {
+  useScript(GOOGLE_URL, () => {
     google.accounts.id.initialize({
-      client_id:
-        '1083307641056-5mudfltja82dgrpqsgte4efiv0jn5kc7.apps.googleusercontent.com',
+      client_id: GOOGLE_USERID,
       auto_select: false,
     })
   })
