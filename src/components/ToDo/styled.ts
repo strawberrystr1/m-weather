@@ -1,23 +1,25 @@
 import styled from '@emotion/styled'
 import { Box, Typography } from '@mui/material'
 
+import { FONT_SIZE, MARGIN, WIDTH } from '@theme/index'
+
 export const BoxFlex = styled(Box)`
   display: flex;
   align-items: flex-start;
-  margin-top: 10px;
+  margin-top: ${MARGIN[10]}px;
 `
 
 export const TodoTime = styled(Typography)`
-  width: 12%;
+  width: ${WIDTH.TODO_TIME}%;
   text-align: center;
 `
 
 export const TodoText = styled(Typography)`
-  font-size: 22px;
-  margin-left: 30px;
+  font-size: ${FONT_SIZE.TIME_DATE}px;
+  margin-left: ${MARGIN[30]}px;
 `
 
 export const TodoDescription = styled(Typography)`
-  font-size: 16px;
-  margin-left: 30px;
+  font-size: ${FONT_SIZE.TODO_DESC}px;
+  margin-left: ${MARGIN[30]}px;
 `

@@ -1,4 +1,4 @@
-import { TextField } from '@mui/material'
+import { TextField, Typography } from '@mui/material'
 import { useSelector, useDispatch } from 'react-redux'
 
 import APIChoiseBlock from '@components/APIChoiseBlock'
@@ -6,7 +6,7 @@ import { setCurrentCity, setPreviousCity } from '@redux/actions/userActions'
 import { RootState } from '@redux/index'
 
 import IProps from './types'
-import { BoxWrapper, City, Country } from './styled'
+import BoxWrapper from './styled'
 
 const CityBlock = ({ city, country }: IProps) => {
   const {
@@ -24,8 +24,8 @@ const CityBlock = ({ city, country }: IProps) => {
 
   return (
     <BoxWrapper>
-      <City variant="subtitle1">{currentCity}</City>
-      <Country variant="subtitle2">{country}</Country>
+      <Typography variant="subtitle1">{currentCity}</Typography>
+      <Typography variant="subtitle2">{country}</Typography>
       <TextField
         variant="standard"
         placeholder={currentCity}

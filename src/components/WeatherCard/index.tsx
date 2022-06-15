@@ -1,7 +1,6 @@
-import { Card, CardContent, CardMedia } from '@mui/material'
+import { Card, CardContent, CardMedia, Typography } from '@mui/material'
 import { OPENWEATHER_API_IMG_URL } from '@constants/api'
 
-import { Day, Temperature } from './styled'
 import IProps from './types'
 
 const WeatherCard = ({ today, day, temperature, icon }: IProps) => (
@@ -14,9 +13,9 @@ const WeatherCard = ({ today, day, temperature, icon }: IProps) => (
     }}
   >
     <CardContent>
-      <Day variant="overline" className="badge">
+      <Typography variant="overline" className="badge">
         {day}
-      </Day>
+      </Typography>
     </CardContent>
     {!today && (
       <CardMedia
@@ -27,10 +26,10 @@ const WeatherCard = ({ today, day, temperature, icon }: IProps) => (
       />
     )}
     <CardContent>
-      <Temperature fontSize={today ? 40 : 22}>
+      <Typography fontSize={today ? 40 : 22}>
         {temperature}
         <sup> o</sup>
-      </Temperature>
+      </Typography>
     </CardContent>
   </Card>
 )

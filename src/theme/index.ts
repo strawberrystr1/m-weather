@@ -6,6 +6,33 @@ import convertColor from '@utils/convertColor'
 export const WHITE_COLOR = '#ffffff'
 export const BLACK_COLOR = '#000000'
 export const WEATHER_BG_COLOR = convertColor(blueGrey[600], '0.9')
+export const API_BLOCK_MT = 30
+
+export const MARGIN = {
+  30: 30,
+  10: 10,
+  5: 5,
+}
+
+export const WIDTH = {
+  CITY_WRAPPER: 11,
+  TODO_TIME: 12,
+  TIME_WRAPPER: 35,
+  TODAY_WRAPPER: 20,
+  TODAY_IMAGE: 50,
+}
+
+export const HEIGHT = {
+  TODO_BLOCK: 80,
+  FULL: 100,
+}
+
+export const FONT_SIZE = {
+  TIME_SIZE: 80,
+  TIME_FORMAT: 30,
+  TIME_DATE: 22,
+  TODO_DESC: 16,
+}
 
 export const FONT_WEIGHT = {
   400: '400',

@@ -1,9 +1,7 @@
 import styled from '@emotion/styled'
-import { Box, Typography } from '@mui/material'
+import { Box } from '@mui/material'
+import { WIDTH } from '@theme/index'
 
-export const BoxWrapper = styled(Box)`
-  width: 11%;
+export default styled(Box)`
+  width: ${WIDTH.CITY_WRAPPER}%;
 `
-
-export const City = styled(Typography)``
-export const Country = styled(Typography)``
