@@ -1,7 +1,7 @@
-import { GOOGLE_API_SCOPE, GOOGLE_USERID } from '../constants/api'
-import { IClientObject } from '../interfaces/api'
-import { AppDispatch } from '../redux'
-import { initUserError, receiveToken } from '../redux/actions/userActions'
+import { GOOGLE_API_SCOPE, GOOGLE_USERID } from '@constants/api'
+import { IClientObject } from '@interfaces/api'
+import { AppDispatch } from '@redux/index'
+import { initUserError, receiveToken } from '@redux/actions/userActions'
 
 let client: IClientObject
 let token: string

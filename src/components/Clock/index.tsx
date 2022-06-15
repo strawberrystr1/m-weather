@@ -1,7 +1,7 @@
 import { Box } from '@mui/material'
 import { useEffect, useState } from 'react'
 
-import { getDate, getTime, getTimeFormat } from '../../utils/dateHandlers'
+import { getDate, getTime, getTimeFormat } from '@utils/dateHandlers'
 
 import { TimeBox, TimeFormat, Time, TimeDate } from './styled'
 

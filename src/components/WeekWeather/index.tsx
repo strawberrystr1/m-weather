@@ -1,6 +1,6 @@
-import { BoxFlexRow } from '../styled'
-import WeatherCard from '../WeatherCard'
-import weekDays from '../../constants/weekDays'
+import { BoxFlexRow } from '@components/styled'
+import WeatherCard from '@components/WeatherCard'
+import weekDays from '@constants/weekDays'
 
 import IProps from './types'
 

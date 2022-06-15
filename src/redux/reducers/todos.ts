@@ -1,5 +1,6 @@
-import { GET_TODOS } from '../../constants/reduxActions'
-import { IDispatchTodoAction } from '../../interfaces/reduxAction'
+import { GET_TODOS } from '@constants/reduxActions'
+import { IDispatchTodoAction } from '@interfaces/reduxAction'
+
 import { IInitialTodos } from './types'
 
 const initialState: IInitialTodos = {

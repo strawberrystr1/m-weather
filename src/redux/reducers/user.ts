@@ -3,8 +3,9 @@ import {
   RECEIVE_TOKEN,
   SET_CURRENT_CITY,
   SET_PREVIOUS_CITY,
-} from '../../constants/reduxActions'
-import IDispatchUserAction from '../../interfaces/reduxAction'
+} from '@constants/reduxActions'
+import IDispatchUserAction from '@interfaces/reduxAction'
+
 import { IInitialUser } from './types'
 
 const initialState: IInitialUser = {

@@ -1,5 +1,6 @@
-import { SET_CITY_ERROR } from '../../constants/reduxActions'
-import { IDispatchErrorAction } from '../../interfaces/reduxAction'
+import { SET_CITY_ERROR } from '@constants/reduxActions'
+import { IDispatchErrorAction } from '@interfaces/reduxAction'
+
 import { IInitialErrors } from './types'
 
 const initialState: IInitialErrors = {

@@ -3,16 +3,21 @@ import { ThemeProvider } from '@emotion/react'
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
-import bg from '../assets/images/1.jpg'
-import UserInfo from '../components/UserInfo'
-import WeatherInfo from '../components/WeatherInfo'
-import theme from '../theme'
-import useScript from '../hooks/useScript'
-import { initClient } from '../api/initUser'
-import { RootState } from '../redux'
+import bg from '@assets/images/1.jpg'
+import UserInfo from '@components/UserInfo'
+import WeatherInfo from '@components/WeatherInfo'
+import theme from '@theme/index'
+import useScript from '@hooks/useScript'
+import { initClient } from '@api/initUser'
+import { RootState } from '@redux/index'
+import {
+  GOOGLE_URL,
+  GOOGLE_USERID,
+  STORMGLASS_API_KEY,
+  STORMGLASS_API_URL,
+} from '@constants/api'
 
 import { BackgroundPicture, ContainerFront } from './styled'
-import { GOOGLE_URL, GOOGLE_USERID } from '../constants/api'
 
 function App() {
   const dispatch = useDispatch()
@@ -23,6 +28,19 @@ function App() {
   }
 
   useEffect(() => {
+    // const params = 'airTemperature,cloudCover,precipitation,humidity,gust'
+    // const date = new Date(2022, 5, 16).getTime() / 1000
+    // fetch(
+    //   `${STORMGLASS_API_URL}?lat=52.3&lng=19.2167&params=${params}&end=${date}&source=sg`,
+    //   {
+    //     headers: {
+    //       Authorization: STORMGLASS_API_KEY,
+    //     },
+    //   },
+    // )
+    //   .then(res => res.json())
+    //   .then(res => console.log(res))
+
     if (!token) window.addEventListener('load', initProfile)
 
     return () => window.removeEventListener('load', initProfile)

@@ -1,18 +1,18 @@
 import { takeEvery, take, call, put, select, fork } from 'redux-saga/effects'
 
-import { getCityByIP, getCityCoords, getWeatherByCityName } from '../../api/weather'
+import { getCityByIP, getCityCoords, getWeatherByCityName } from '@api/weather'
 import {
   CHANGE_CITY,
   LOAD_WEATHER_BY_IP,
   SET_CITY,
   SET_CURRENT_CITY,
-} from '../../constants/reduxActions'
-import { IIPResponse, IOpenweatherResponse, IWeatherPayload } from '../../interfaces/api'
-import { setCity, setCityError, setCurrentCity } from '../actions/userActions'
-import mapOpenweatherResponse from '../../utils/weatherResponseMappers'
+} from '@constants/reduxActions'
+import { IIPResponse, IOpenweatherResponse, IWeatherPayload } from '@interfaces/api'
+import { setCity, setCityError, setCurrentCity } from '@redux/actions/userActions'
+import mapOpenweatherResponse from '@utils/weatherResponseMappers'
+import { IInitialErrors, IInitialUser, IInitialWeather } from '@redux/reducers/types'
 
 import { SetWeatherGenerator, WeatherByIPGenerator } from './types'
-import { IInitialErrors, IInitialUser, IInitialWeather } from '../reducers/types'
 
 // function* getNewWeather() {
 //   try {

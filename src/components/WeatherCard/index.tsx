@@ -1,5 +1,5 @@
 import { Card, CardContent, CardMedia } from '@mui/material'
-import { OPENWEATHER_API_IMG_URL } from '../../constants/api'
+import { OPENWEATHER_API_IMG_URL } from '@constants/api'
 
 import { Day, Temperature } from './styled'
 import IProps from './types'

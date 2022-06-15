@@ -1,8 +1,8 @@
-import { GOOGLE_CALENDAR_URL } from '../constants/api'
-import { ICalendarResponse } from '../interfaces/api'
-import { AppDispatch } from '../redux'
-import { getTodos } from '../redux/actions/userActions'
-import { getISOStringForAPI, parseDateFromISOString } from '../utils/dateHandlers'
+import { GOOGLE_CALENDAR_URL } from '@constants/api'
+import { ICalendarResponse } from '@interfaces/api'
+import { AppDispatch } from '@redux/index'
+import { getTodos } from '@redux/actions/userActions'
+import { getISOStringForAPI, parseDateFromISOString } from '@utils/dateHandlers'
 
 export default async (token: string, dispatch: AppDispatch) => {
   const todayDate = getISOStringForAPI()

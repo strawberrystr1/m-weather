@@ -8,8 +8,8 @@ import {
   SET_CURRENT_CITY,
   SET_PREVIOUS_CITY,
   SET_CITY_ERROR,
-} from '../../constants/reduxActions'
-import { ICalendarTodo, IWeatherPayload } from '../../interfaces/api'
+} from '@constants/reduxActions'
+import { ICalendarTodo, IWeatherPayload } from '@interfaces/api'
 
 export const initUserError = () => ({ type: INIT_USER_ERROR, payload: '' })
 export const getTokenAction = () => ({ type: GET_TOKEN })

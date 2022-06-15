@@ -1,5 +1,5 @@
-import { SET_CITY } from '../../constants/reduxActions'
-import { IDispatchWeatcherACtion } from '../../interfaces/reduxAction'
+import { SET_CITY } from '@constants/reduxActions'
+import { IDispatchWeatcherACtion } from '@interfaces/reduxAction'
 
 import { IInitialWeather } from './types'
 

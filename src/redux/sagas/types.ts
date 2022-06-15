@@ -1,10 +1,11 @@
 import { CallEffect, PutEffect, SelectEffect, TakeEffect } from 'redux-saga/effects'
+
 import {
   IClientObject,
   IIPResponse,
   IOpenweatherResponse,
   IWeatherPayload,
-} from '../../interfaces/api'
+} from '@interfaces/api'
 
 export type InitGeneratorFirstArg<T> = CallEffect<T> | PutEffect<{ type: string }>
 

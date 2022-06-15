@@ -1,7 +1,5 @@
-import { useSelector } from 'react-redux'
-import { OPENWEATHER_API_IMG_URL } from '../../constants/api'
-import { RootState } from '../../redux'
-import WeatherCard from '../WeatherCard'
+import { OPENWEATHER_API_IMG_URL } from '@constants/api'
+import WeatherCard from '@components/WeatherCard'
 
 import { TodayBox, TodayImage } from './styled'
 import IProps from './types'

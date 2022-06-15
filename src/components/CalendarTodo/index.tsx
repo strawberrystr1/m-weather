@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux'
 
-import { RootState } from '../../redux'
-import ToDo from '../ToDo'
+import { RootState } from '@redux/index'
+import ToDo from '@components/ToDo'
 
 import OverflowBox from './styled'
 

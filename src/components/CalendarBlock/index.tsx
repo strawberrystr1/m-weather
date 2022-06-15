@@ -1,12 +1,12 @@
 import { Box, Button } from '@mui/material'
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { getToken } from '../../api/initUser'
+import { getToken } from '@api/initUser'
 
-import { RootState } from '../../redux'
-import CalendarTodo from '../CalendarTodo'
-import Clock from '../Clock'
-import loadCalendar from '../../api/calendar'
+import { RootState } from '@redux/index'
+import CalendarTodo from '@components/CalendarTodo'
+import Clock from '@components/Clock'
+import loadCalendar from '@api/calendar'
 
 const CalendarBlock = () => {
   const { token } = useSelector((state: RootState) => state.user)

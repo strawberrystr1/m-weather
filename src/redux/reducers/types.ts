@@ -1,4 +1,4 @@
-import { ICalendarTodo, IWeatherStorageItem } from '../../interfaces/api'
+import { ICalendarTodo, IWeatherStorageItem } from '@interfaces/api'
 
 export interface IInitialTodos {
   todos: ICalendarTodo[]

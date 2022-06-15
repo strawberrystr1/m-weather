@@ -1,12 +1,12 @@
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
-import BoxWrapper from '../styled'
-import { WEATHER_BG_COLOR } from '../../theme'
-import TodayWeather from '../TodayWeather'
-import WeekWeather from '../WeekWeather'
-import { weatherByIP } from '../../redux/actions/userActions'
-import { RootState } from '../../redux'
+import BoxWrapper from '@components/styled'
+import { WEATHER_BG_COLOR } from '@theme/index'
+import TodayWeather from '@components/TodayWeather'
+import WeekWeather from '@components/WeekWeather'
+import { weatherByIP } from '@redux/actions/userActions'
+import { RootState } from '@redux/index'
 
 const WeatherInfo = () => {
   const dispatch = useDispatch()

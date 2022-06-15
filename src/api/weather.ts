@@ -4,8 +4,8 @@ import {
   IP_API_URL,
   OPENWEATHER_API_KEY,
   OPENWEATHER_API_URL,
-} from '../constants/api'
-import { IGeolocationData, IIPResponse, IOpenweatherResponse } from '../interfaces/api'
+} from '@constants/api'
+import { IGeolocationData, IIPResponse, IOpenweatherResponse } from '@interfaces/api'
 
 export const getCityByIP = async () => {
   const response = await fetch(IP_API_URL)

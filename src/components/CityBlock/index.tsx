@@ -1,9 +1,9 @@
 import { TextField } from '@mui/material'
 import { useSelector, useDispatch } from 'react-redux'
 
-import APIChoiseBlock from '../APIChoiseBlock'
-import { setCurrentCity, setPreviousCity } from '../../redux/actions/userActions'
-import { RootState } from '../../redux'
+import APIChoiseBlock from '@components/APIChoiseBlock'
+import { setCurrentCity, setPreviousCity } from '@redux/actions/userActions'
+import { RootState } from '@redux/index'
 
 import IProps from './types'
 import { BoxWrapper, City, Country } from './styled'

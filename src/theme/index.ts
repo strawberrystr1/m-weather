@@ -1,7 +1,7 @@
 import { ThemeOptions, createTheme } from '@mui/material'
 import { grey, blueGrey } from '@mui/material/colors'
 
-import convertColor from '../utils/convertColor'
+import convertColor from '@utils/convertColor'
 
 export const WHITE_COLOR = '#ffffff'
 export const BLACK_COLOR = '#000000'
