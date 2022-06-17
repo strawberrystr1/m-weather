@@ -8,6 +8,7 @@ import {
   SET_CURRENT_CITY,
   SET_PREVIOUS_CITY,
   SET_CITY_ERROR,
+  CHANGE_API,
 } from '@constants/reduxActions'
 import { ICalendarTodo, IWeatherPayload } from '@interfaces/api'
 
@@ -15,8 +16,13 @@ export const initUserError = () => ({ type: INIT_USER_ERROR, payload: '' })
 export const getTokenAction = () => ({ type: GET_TOKEN })
 export const receiveToken = (payload: string) => ({ type: RECEIVE_TOKEN, payload })
 export const getTodos = (payload: ICalendarTodo[]) => ({ type: GET_TODOS, payload })
-export const setCity = (payload: IWeatherPayload) => ({ type: SET_CITY, payload })
+export const setCity = (payload: IWeatherPayload, meta: string) => ({
+  type: SET_CITY,
+  payload,
+  meta,
+})
 export const weatherByIP = () => ({ type: LOAD_WEATHER_BY_IP })
 export const setCurrentCity = (payload: string) => ({ type: SET_CURRENT_CITY, payload })
 export const setPreviousCity = (payload: string) => ({ type: SET_PREVIOUS_CITY, payload })
 export const setCityError = (payload: string) => ({ type: SET_CITY_ERROR, payload })
+export const changeAPI = (payload: string) => ({ type: CHANGE_API, payload })

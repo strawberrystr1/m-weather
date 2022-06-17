@@ -4,8 +4,17 @@ import {
   IP_API_URL,
   OPENWEATHER_API_KEY,
   OPENWEATHER_API_URL,
+  STORMGLASS_API_KEY,
+  STORMGLASS_API_URL,
 } from '@constants/api'
-import { IGeolocationData, IIPResponse, IOpenweatherResponse } from '@interfaces/api'
+import {
+  IGeolocationData,
+  IIPResponse,
+  IOpenweatherResponse,
+  IStormglassResponse,
+} from '@interfaces/api'
+import { getFutureDate } from '@utils/dateHandlers'
+import APIResponseMock from './mock'
 
 export const getCityByIP = async () => {
   const response = await fetch(IP_API_URL)
@@ -13,7 +22,7 @@ export const getCityByIP = async () => {
   return data
 }
 
-export const getWeatherByCityName = async (lat: number, lon: number) => {
+export const getWeatherByCityNameOpenweather = async (lat: number, lon: number) => {
   const response = await fetch(
     `${OPENWEATHER_API_URL}?lat=${lat}&lon=${lon}&units=metric&exclude=hourly,minutely&appid=${OPENWEATHER_API_KEY}`,
   )
@@ -36,5 +45,30 @@ export const getCityCoords = async (city: string): Promise<IIPResponse | Error> 
     }
   } catch (error) {
     return new Error('No data for this city')
+  }
+}
+
+export const getWeatherByCityNameStormglass = async (
+  lat: number,
+  lon: number,
+): Promise<IStormglassResponse> => {
+  const date = getFutureDate(7).getTime() / 1000
+
+  const response = await fetch(
+    `${STORMGLASS_API_URL}?lat=${lat}&lng=${lon}&params=airTemperature&end=${date}&source=sg`,
+    {
+      headers: {
+        Authorization: STORMGLASS_API_KEY,
+      },
+    },
+  )
+
+  const data: IStormglassResponse = await response.json()
+  console.log('data: ', data)
+
+  return {
+    hours: data.hours.filter(item => {
+      return new Date(item.time).getHours() === 12
+    }),
   }
 }

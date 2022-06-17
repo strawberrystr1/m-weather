@@ -3,6 +3,7 @@ import {
   RECEIVE_TOKEN,
   SET_CURRENT_CITY,
   SET_PREVIOUS_CITY,
+  CHANGE_API,
 } from '@constants/reduxActions'
 import IDispatchUserAction from '@interfaces/reduxAction'
 
@@ -13,6 +14,7 @@ const initialState: IInitialUser = {
   token: '',
   currentCity: '',
   previousCity: '',
+  currentAPI: 'openweather',
 }
 
 const userReducer = (state = initialState, action: IDispatchUserAction): IInitialUser => {
@@ -27,6 +29,8 @@ const userReducer = (state = initialState, action: IDispatchUserAction): IInitia
       return { ...state, currentCity: payload }
     case SET_PREVIOUS_CITY:
       return { ...state, previousCity: payload }
+    case CHANGE_API:
+      return { ...state, currentAPI: payload }
     default:
       return state
   }

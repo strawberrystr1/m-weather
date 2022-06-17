@@ -7,14 +7,11 @@ import { getISOStringForAPI, parseDateFromISOString } from '@utils/dateHandlers'
 export default async (token: string, dispatch: AppDispatch) => {
   const todayDate = getISOStringForAPI()
   const nextDay = getISOStringForAPI(true)
-  const response = await fetch(
-    `${GOOGLE_CALENDAR_URL}?timeMin=${todayDate}&timeMax=${nextDay}`,
-    {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
+  const response = await fetch(`${GOOGLE_CALENDAR_URL}?timeMin=${todayDate}&timeMax=${nextDay}`, {
+    headers: {
+      Authorization: `Bearer ${token}`,
     },
-  )
+  })
 
   const data: ICalendarResponse = await response.json()
 

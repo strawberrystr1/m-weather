@@ -4,16 +4,13 @@ import {
   IClientObject,
   IIPResponse,
   IOpenweatherResponse,
+  IStormglassResponse,
   IWeatherPayload,
 } from '@interfaces/api'
 
 export type InitGeneratorFirstArg<T> = CallEffect<T> | PutEffect<{ type: string }>
 
-export type InitGenerator = Generator<
-  InitGeneratorFirstArg<IClientObject>,
-  void,
-  IClientObject
->
+export type InitGenerator = Generator<InitGeneratorFirstArg<IClientObject>, void, IClientObject>
 
 export type WeatherByIPGenerator = Generator<
 | CallEffect<IIPResponse>
@@ -29,7 +26,7 @@ unknown
 export type SetWeatherGenerator = Generator<
 | CallEffect<IIPResponse | Error>
 | SelectEffect
-| CallEffect<IOpenweatherResponse>
+| CallEffect<IOpenweatherResponse | IStormglassResponse>
 | PutEffect<{
   type: string
   payload: string

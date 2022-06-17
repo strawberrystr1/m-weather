@@ -9,13 +9,24 @@ export interface IInitialUser {
   token: string
   currentCity: string
   previousCity: string
+  currentAPI: string
 }
 
-export type IInitialWeather = {
-  [key: string]: {
-    current: IWeatherStorageItem
-    daily: IWeatherStorageItem[]
+export interface IInitialWeather {
+  openweather: {
+    [ket: string]: IWeatherItem
   }
+  stormglass: {
+    [ket: string]: IWeatherItem
+  }
+}
+
+export type WeatherKeys = keyof IInitialWeather
+
+export interface IWeatherItem {
+  current: IWeatherStorageItem
+  daily: IWeatherStorageItem[]
+  createDate: number
 }
 
 export interface IInitialErrors {

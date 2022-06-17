@@ -7,6 +7,7 @@ export const WHITE_COLOR = '#ffffff'
 export const BLACK_COLOR = '#000000'
 export const WEATHER_BG_COLOR = convertColor(blueGrey[600], '0.9')
 export const API_BLOCK_MT = 30
+export const ZERO_SIZE = 0
 
 export const MARGIN = {
   30: 30,
@@ -20,10 +21,12 @@ export const WIDTH = {
   TIME_WRAPPER: 35,
   TODAY_WRAPPER: 20,
   TODAY_IMAGE: 50,
+  FULL: 100,
 }
 
 export const HEIGHT = {
   TODO_BLOCK: 80,
+  FRONT_CONTAINER: 90,
   FULL: 100,
 }
 

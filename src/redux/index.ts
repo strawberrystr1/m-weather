@@ -25,10 +25,7 @@ const rootReducer = combineReducers({
 
 const persistedReducer = persistReducer(persistCongif, rootReducer)
 
-const store = createStore(
-  persistedReducer,
-  composeWithDevTools(applyMiddleware(sagaMiddleware)),
-)
+const store = createStore(persistedReducer, composeWithDevTools(applyMiddleware(sagaMiddleware)))
 
 sagaMiddleware.run(rootSaga)
 export const persistor = persistStore(store)

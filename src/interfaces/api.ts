@@ -37,6 +37,7 @@ export interface IWeatherPayload {
   weather: {
     current: IWeatherStorageItem
     daily: IWeatherStorageItem[]
+    createDate: number
   }
 }
 
@@ -59,6 +60,17 @@ export interface IOpenweatherResponse {
     dt: number
   }
   daily: IOpenweatherDailyItem[]
+}
+
+export interface IStormglassResponse {
+  hours: IStormglassResponseItem[]
+}
+
+interface IStormglassResponseItem {
+  airTemperature: {
+    sg: number
+  }
+  time: string
 }
 
 export interface IIPResponse {

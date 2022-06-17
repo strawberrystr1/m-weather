@@ -7,10 +7,7 @@ const initialState: IInitialTodos = {
   todos: [],
 }
 
-const todoReducer = (
-  state = initialState,
-  action: IDispatchTodoAction,
-): IInitialTodos => {
+const todoReducer = (state = initialState, action: IDispatchTodoAction): IInitialTodos => {
   const { type, payload } = action
 
   switch (type) {

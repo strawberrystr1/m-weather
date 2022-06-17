@@ -13,6 +13,7 @@ export interface IDispatchTodoAction extends IDispatchAction {
 
 export interface IDispatchWeatcherACtion extends IDispatchAction {
   payload: IWeatherPayload
+  meta: string
 }
 
 export interface IDispatchErrorAction extends IDispatchAction {

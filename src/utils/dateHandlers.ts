@@ -47,4 +47,21 @@ const parseDateFromISOString = (iso: string) => {
   return date.toLocaleTimeString().slice(0, -3)
 }
 
-export { getTime, getDate, getTimeFormat, getISOStringForAPI, parseDateFromISOString }
+const getFutureDate = (forwardDays: number) => {
+  const currentDate = new Date()
+  const nextDate = new Date(
+    currentDate.getFullYear(),
+    currentDate.getMonth(),
+    currentDate.getDate() + forwardDays,
+  )
+  return nextDate
+}
+
+export {
+  getTime,
+  getDate,
+  getTimeFormat,
+  getISOStringForAPI,
+  parseDateFromISOString,
+  getFutureDate,
+}

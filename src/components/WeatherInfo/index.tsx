@@ -7,11 +7,12 @@ import TodayWeather from '@components/TodayWeather'
 import WeekWeather from '@components/WeekWeather'
 import { weatherByIP } from '@redux/actions/userActions'
 import { RootState } from '@redux/index'
+import { WeatherKeys } from '@redux/reducers/types'
 
 const WeatherInfo = () => {
   const dispatch = useDispatch()
   const {
-    user: { currentCity },
+    user: { currentCity, currentAPI },
     weather,
   } = useSelector((state: RootState) => state)
 
@@ -21,10 +22,10 @@ const WeatherInfo = () => {
 
   return (
     <BoxWrapper height="30%" sx={{ background: WEATHER_BG_COLOR }}>
-      {weather[currentCity] && (
+      {weather[currentAPI as WeatherKeys][currentCity] && (
         <>
-          <TodayWeather weather={weather[currentCity].current} />
-          <WeekWeather weather={weather[currentCity].daily} />
+          <TodayWeather weather={weather[currentAPI as WeatherKeys][currentCity].current} />
+          <WeekWeather weather={weather[currentAPI as WeatherKeys][currentCity].daily} />
         </>
       )}
     </BoxWrapper>
