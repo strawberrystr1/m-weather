@@ -34,6 +34,9 @@ export type SetWeatherGenerator = Generator<
 | PutEffect<{
   type: string
   payload: IWeatherPayload
+}>
+| PutEffect<{
+  type: string
 }>,
 void,
 unknown

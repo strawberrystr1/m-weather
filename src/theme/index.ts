@@ -16,7 +16,7 @@ export const MARGIN = {
 }
 
 export const WIDTH = {
-  CITY_WRAPPER: 11,
+  CITY_WRAPPER: 15,
   TODO_TIME: 12,
   TIME_WRAPPER: 35,
   TODAY_WRAPPER: 20,

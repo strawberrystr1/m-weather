@@ -1,12 +1,13 @@
 import { Box, Button } from '@mui/material'
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { getToken } from '@api/initUser'
 
+import { getToken } from '@api/initUser'
 import { RootState } from '@redux/index'
 import CalendarTodo from '@components/CalendarTodo'
 import Clock from '@components/Clock'
 import loadCalendar from '@api/calendar'
+import { logoutUser } from '@redux/actions/userActions'
 
 const CalendarBlock = () => {
   const { token } = useSelector((state: RootState) => state.user)
@@ -18,12 +19,21 @@ const CalendarBlock = () => {
     }
   }, [token])
 
+  const handleLogout = () => dispatch(logoutUser())
+
   return (
     <Box sx={{ width: '40%', height: '100%' }}>
       <Clock />
-      {token && <CalendarTodo />}
+      {token && (
+        <>
+          <Button variant="contained" color="warning" onClick={handleLogout}>
+            Log out
+          </Button>
+          <CalendarTodo />
+        </>
+      )}
       {!token && (
-        <Button variant="contained" sx={{ marginTop: '20px' }} onClick={() => getToken()}>
+        <Button variant="contained" sx={{ marginTop: '20px' }} onClick={getToken}>
           Login to load calendar
         </Button>
       )}

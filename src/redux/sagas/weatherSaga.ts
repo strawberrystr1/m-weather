@@ -13,7 +13,14 @@ import {
   IStormglassResponse,
   IWeatherPayload,
 } from '@interfaces/api'
-import { setCity, setCityError, setCurrentCity } from '@redux/actions/userActions'
+import {
+  changePicture,
+  loadingOff,
+  loadingOn,
+  setCity,
+  setCityError,
+  setCurrentCity,
+} from '@redux/actions/userActions'
 import mapOpenweatherResponse, { mergeWithOpenWeather } from '@utils/weatherResponseMappers'
 import { IInitialErrors, IInitialUser, IInitialWeather } from '@redux/reducers/types'
 
@@ -23,6 +30,8 @@ function* setNewWeather(): SetWeatherGenerator {
   const user = yield select(state => state.user)
   const weatherStore = yield select(state => state.weather)
   const errorStore = yield select(state => state.errors)
+
+  yield put(loadingOn())
 
   if ((errorStore as IInitialErrors).cityError) {
     yield put(setCityError(''))
@@ -37,12 +46,16 @@ function* setNewWeather(): SetWeatherGenerator {
   if (
     storeTyped[currentAPI as keyof IInitialWeather][currentCity]
     && storeTyped[currentAPI as keyof IInitialWeather][currentCity].createDate === todayDay
-  ) return
+  ) {
+    yield put(loadingOff())
+    return
+  }
 
   const coords = yield call(getCityCoords, currentCity)
 
   if (coords instanceof Error) {
     yield put(setCityError(coords.message))
+    yield put(loadingOff())
     return
   }
 
@@ -87,6 +100,8 @@ function* setNewWeather(): SetWeatherGenerator {
   }
 
   yield put(setCity(payload, currentAPI))
+  yield put(changePicture(current.icon))
+  yield put(loadingOff())
 }
 
 function* watchNewIP(): WeatherByIPGenerator {

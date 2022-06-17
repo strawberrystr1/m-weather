@@ -1,5 +1,6 @@
 import styled from '@emotion/styled'
 import { Box } from '@mui/material'
+
 import { WIDTH, HEIGHT, ZERO_SIZE } from '@theme/index'
 
 export const BackgroundPicture = styled.img`
@@ -22,4 +23,15 @@ export const ContainerFront = styled(Box)`
   align-items: center;
   justify-content: space-between;
   box-shadow: 0px 0px 20px 20px rgba(115, 103, 102, 0.3);
+  background-color: rgba(0, 0, 0, 0.1);
+`
+export const LoaderBox = styled(Box)`
+  position: absolute;
+  width: ${WIDTH.FULL}vw;
+  height: ${HEIGHT.FULL}vh;
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.7);
 `

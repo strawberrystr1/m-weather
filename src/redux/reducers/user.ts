@@ -4,6 +4,10 @@ import {
   SET_CURRENT_CITY,
   SET_PREVIOUS_CITY,
   CHANGE_API,
+  SET_PICTURE,
+  LOADING_ON,
+  LOADING_OFF,
+  LOGOUT,
 } from '@constants/reduxActions'
 import IDispatchUserAction from '@interfaces/reduxAction'
 
@@ -15,6 +19,8 @@ const initialState: IInitialUser = {
   currentCity: '',
   previousCity: '',
   currentAPI: 'openweather',
+  currentPicture: '',
+  loading: false,
 }
 
 const userReducer = (state = initialState, action: IDispatchUserAction): IInitialUser => {
@@ -31,6 +37,14 @@ const userReducer = (state = initialState, action: IDispatchUserAction): IInitia
       return { ...state, previousCity: payload }
     case CHANGE_API:
       return { ...state, currentAPI: payload }
+    case SET_PICTURE:
+      return { ...state, currentPicture: payload }
+    case LOADING_ON:
+      return { ...state, loading: true }
+    case LOADING_OFF:
+      return { ...state, loading: false }
+    case LOGOUT:
+      return { ...state, token: '' }
     default:
       return state
   }

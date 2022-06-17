@@ -10,6 +10,8 @@ export interface IInitialUser {
   currentCity: string
   previousCity: string
   currentAPI: string
+  currentPicture: string
+  loading: boolean
 }
 
 export interface IInitialWeather {
