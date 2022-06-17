@@ -4,13 +4,13 @@ import { useSelector, useDispatch } from 'react-redux'
 import APIChoiseBlock from '@components/APIChoiseBlock'
 import { setCurrentCity, setPreviousCity } from '@redux/actions/userActions'
 import { RootState } from '@redux/index'
+import { WIDTH } from '@theme/index'
 
-import IProps from './types'
 import BoxWrapper from './styled'
 
-const CityBlock = ({ city, country }: IProps) => {
+const CityBlock = () => {
   const {
-    user: { currentCity },
+    user: { currentCity, country },
     weather,
   } = useSelector((state: RootState) => state)
   const dispatch = useDispatch()
@@ -29,7 +29,7 @@ const CityBlock = ({ city, country }: IProps) => {
       <TextField
         variant="standard"
         placeholder={currentCity}
-        sx={{ marginTop: '20px' }}
+        sx={{ marginTop: '20px', width: `${WIDTH.HALF}%` }}
         onKeyDown={handleCityChange}
       />
       <APIChoiseBlock />

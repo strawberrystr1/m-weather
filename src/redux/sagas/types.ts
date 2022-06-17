@@ -26,7 +26,7 @@ unknown
 export type SetWeatherGenerator = Generator<
 | CallEffect<IIPResponse | Error>
 | SelectEffect
-| CallEffect<IOpenweatherResponse | IStormglassResponse>
+| CallEffect<IOpenweatherResponse | IStormglassResponse | Error>
 | PutEffect<{
   type: string
   payload: string

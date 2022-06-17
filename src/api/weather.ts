@@ -51,24 +51,31 @@ export const getCityCoords = async (city: string): Promise<IIPResponse | Error> 
 export const getWeatherByCityNameStormglass = async (
   lat: number,
   lon: number,
-): Promise<IStormglassResponse> => {
+): Promise<IStormglassResponse | Error> => {
   const date = getFutureDate(7).getTime() / 1000
 
-  const response = await fetch(
-    `${STORMGLASS_API_URL}?lat=${lat}&lng=${lon}&params=airTemperature&end=${date}&source=sg`,
-    {
-      headers: {
-        Authorization: STORMGLASS_API_KEY,
+  try {
+    const response = await fetch(
+      `${STORMGLASS_API_URL}?lat=${lat}&lng=${lon}&params=airTemperature&end=${date}&source=sg`,
+      {
+        headers: {
+          Authorization: STORMGLASS_API_KEY,
+        },
       },
-    },
-  )
+    )
 
-  const data: IStormglassResponse = await response.json()
-  console.log('data: ', data)
+    if (response.status === 402) {
+      throw Error()
+    }
 
-  return {
-    hours: data.hours.filter(item => {
-      return new Date(item.time).getHours() === 12
-    }),
+    const data: IStormglassResponse = await response.json()
+
+    return {
+      hours: data.hours.filter(item => {
+        return new Date(item.time).getHours() === 12
+      }),
+    }
+  } catch (e) {
+    return new Error('Quota has been exceeded, choose another API')
   }
 }

@@ -8,6 +8,7 @@ import {
   LOADING_ON,
   LOADING_OFF,
   LOGOUT,
+  SET_COUNTRY,
 } from '@constants/reduxActions'
 import IDispatchUserAction from '@interfaces/reduxAction'
 
@@ -18,6 +19,7 @@ const initialState: IInitialUser = {
   token: '',
   currentCity: '',
   previousCity: '',
+  country: '',
   currentAPI: 'openweather',
   currentPicture: '',
   loading: false,
@@ -39,6 +41,8 @@ const userReducer = (state = initialState, action: IDispatchUserAction): IInitia
       return { ...state, currentAPI: payload }
     case SET_PICTURE:
       return { ...state, currentPicture: payload }
+    case SET_COUNTRY:
+      return { ...state, country: payload }
     case LOADING_ON:
       return { ...state, loading: true }
     case LOADING_OFF:

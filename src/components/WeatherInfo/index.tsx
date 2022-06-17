@@ -8,12 +8,14 @@ import WeekWeather from '@components/WeekWeather'
 import { weatherByIP } from '@redux/actions/userActions'
 import { RootState } from '@redux/index'
 import { WeatherKeys } from '@redux/reducers/types'
+import { Typography } from '@mui/material'
 
 const WeatherInfo = () => {
   const dispatch = useDispatch()
   const {
     user: { currentCity, currentAPI },
     weather,
+    errors: { cityError },
   } = useSelector((state: RootState) => state)
 
   useEffect(() => {
@@ -27,6 +29,11 @@ const WeatherInfo = () => {
           <TodayWeather weather={weather[currentAPI as WeatherKeys][currentCity].current} />
           <WeekWeather weather={weather[currentAPI as WeatherKeys][currentCity].daily} />
         </>
+      )}
+      {cityError && (
+        <Typography sx={{ width: '100%', alignSelf: 'center' }} fontSize={34} textAlign="center">
+          {cityError}
+        </Typography>
       )}
     </BoxWrapper>
   )

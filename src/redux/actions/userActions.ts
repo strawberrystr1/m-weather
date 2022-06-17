@@ -13,6 +13,7 @@ import {
   LOADING_ON,
   LOADING_OFF,
   LOGOUT,
+  SET_COUNTRY,
 } from '@constants/reduxActions'
 import { ICalendarTodo, IWeatherPayload } from '@interfaces/api'
 
@@ -31,6 +32,7 @@ export const setPreviousCity = (payload: string) => ({ type: SET_PREVIOUS_CITY, 
 export const setCityError = (payload: string) => ({ type: SET_CITY_ERROR, payload })
 export const changeAPI = (payload: string) => ({ type: CHANGE_API, payload })
 export const changePicture = (payload: string) => ({ type: SET_PICTURE, payload })
+export const setCountry = (payload: string) => ({ type: SET_COUNTRY, payload })
 export const loadingOn = () => ({ type: LOADING_ON })
 export const loadingOff = () => ({ type: LOADING_OFF })
 export const logoutUser = () => ({ type: LOGOUT })

@@ -11,5 +11,5 @@ export const TodayBox = styled(Box)`
 
 export const TodayImage = styled.img`
   height: auto;
-  width: ${WIDTH.TODAY_IMAGE}%;
+  width: ${WIDTH.HALF}%;
 `

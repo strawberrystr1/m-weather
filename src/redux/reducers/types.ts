@@ -12,6 +12,7 @@ export interface IInitialUser {
   currentAPI: string
   currentPicture: string
   loading: boolean
+  country: string
 }
 
 export interface IInitialWeather {

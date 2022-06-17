@@ -19,6 +19,7 @@ import {
   loadingOn,
   setCity,
   setCityError,
+  setCountry,
   setCurrentCity,
 } from '@redux/actions/userActions'
 import mapOpenweatherResponse, { mergeWithOpenWeather } from '@utils/weatherResponseMappers'
@@ -52,6 +53,7 @@ function* setNewWeather(): SetWeatherGenerator {
   }
 
   const coords = yield call(getCityCoords, currentCity)
+  yield put(setCountry((coords as IIPResponse).country))
 
   if (coords instanceof Error) {
     yield put(setCityError(coords.message))
@@ -75,6 +77,13 @@ function* setNewWeather(): SetWeatherGenerator {
       (coords as IIPResponse).latitude,
       (coords as IIPResponse).longitude,
     )
+
+    if (stormglassWeather instanceof Error) {
+      yield put(setCityError(stormglassWeather.message))
+      yield put(loadingOff())
+      return
+    }
+
     const weatherData = mergeWithOpenWeather(
       stormglassWeather as IStormglassResponse,
       current,
