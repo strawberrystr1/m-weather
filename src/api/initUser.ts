@@ -15,7 +15,7 @@ export const initClient = (dispatch: AppDispatch) => {
     client = google.accounts.oauth2.initTokenClient({
       client_id: GOOGLE_USERID,
       scope: GOOGLE_API_SCOPE,
-      callback: (tokenResponse: any) => {
+      callback: (tokenResponse: { access_token: string }) => {
         token = tokenResponse.access_token
         dispatch(receiveToken(token))
       },

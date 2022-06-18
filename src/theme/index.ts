@@ -101,7 +101,7 @@ const themeOptions: ThemeOptions = {
         root: {
           padding: '10px 0px',
           '&&:last-child': {
-            padding: '10px 0px',
+            padding: '0',
           },
         },
       },

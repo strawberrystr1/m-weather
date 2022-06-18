@@ -2,10 +2,8 @@ export interface IClientObject {
   j: {
     client_id: string
   }
-  requestAccessToken(overrideConfig?: OverridableTokenClientConfig): void
+  requestAccessToken(overrideConfig?: unknown): void
 }
-
-interface OverridableTokenClientConfig {}
 
 export interface ICalendarResponse {
   items: ICalendarTodoResponse[]

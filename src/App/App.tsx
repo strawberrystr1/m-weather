@@ -18,7 +18,7 @@ import { BackgroundPicture, ContainerFront, LoaderBox } from './styled'
 
 function App() {
   const dispatch = useDispatch()
-  const { token, currentPicture, loading } = useSelector((state: RootState) => state.user)
+  const { currentPicture, loading } = useSelector((state: RootState) => state.user)
 
   const initProfile = () => {
     initClient(dispatch)

@@ -127,7 +127,7 @@ function* watchAPIChange() {
   yield takeEvery(CHANGE_API, setNewWeather)
 }
 
-export default function* () {
+export default function* weatherSaga() {
   yield fork(watchNewIP)
   yield fork(watchCityChange)
   yield fork(watchAPIChange)

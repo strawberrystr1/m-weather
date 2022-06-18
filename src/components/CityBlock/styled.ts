@@ -1,7 +1,7 @@
 import styled from '@emotion/styled'
 import { Box, TextField, Typography } from '@mui/material'
 
-import { FONT_SIZE, MARGIN, WIDTH } from '@theme/index'
+import { FONT_SIZE, WIDTH } from '@theme/index'
 
 export default styled(Box)`
   width: ${WIDTH.CITY_WRAPPER}%;

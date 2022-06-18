@@ -12,7 +12,22 @@ export const DayBadge = styled(Typography)`
   }
 `
 
-export const CardPicture = styled.img``
+export const CardPicture = styled.div<{ bg: string }>`
+  background-image: ${props => `url(${props.bg})`};
+  background-position: center;
+  background-size: 140%;
+  width: 70px;
+  height: 70px;
+
+  @media (max-height: 600px) {
+    width: 30px;
+    height: 30px;
+  }
+  @media (max-width: 600px) and (max-height: 500px) {
+    width: 30px;
+    height: 30px;
+  }
+`
 
 export const CardWrapper = styled(Card)`
   display: flex;

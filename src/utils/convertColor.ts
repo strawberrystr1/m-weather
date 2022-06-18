@@ -1,4 +1,4 @@
-export default function (color: string, alpha = '1') {
+export default (color: string, alpha = '1') => {
   const colorArray = color.slice(1).split('')
   let rgbColor = ''
   for (let i = 0; i < colorArray.length; i += 2) {

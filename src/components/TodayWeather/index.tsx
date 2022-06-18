@@ -1,7 +1,6 @@
-import { OPENWEATHER_API_IMG_URL } from '@constants/api'
 import WeatherCard from '@components/WeatherCard'
 
-import { TodayBox, TodayImage } from './styled'
+import { TodayBox } from './styled'
 import IProps from './types'
 
 const TodayWeather = ({ weather }: IProps) => {

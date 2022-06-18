@@ -41,5 +41,4 @@ export type SetWeatherGenerator = Generator<
 void,
 unknown
 >
-
 export type TokenGenerator = Generator<InitGeneratorFirstArg<string>, void, string>

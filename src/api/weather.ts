@@ -14,7 +14,6 @@ import {
   IStormglassResponse,
 } from '@interfaces/api'
 import { getFutureDate } from '@utils/dateHandlers'
-import APIResponseMock from './mock'
 
 export const getCityByIP = async () => {
   const response = await fetch(IP_API_URL)
@@ -27,7 +26,6 @@ export const getWeatherByCityNameOpenweather = async (lat: number, lon: number) 
     `${OPENWEATHER_API_URL}?lat=${lat}&lon=${lon}&units=metric&exclude=hourly,minutely&appid=${OPENWEATHER_API_KEY}`,
   )
   const data: IOpenweatherResponse = await response.json()
-  console.log(data)
   return data
 }
 
