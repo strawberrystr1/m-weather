@@ -1,14 +1,17 @@
-import { Box } from '@mui/material'
 import styled from '@emotion/styled'
-import { MARGIN, WIDTH } from '@theme/index'
+import { Box } from '@mui/material'
+
+import { HEIGHT, WIDTH } from '@theme/index'
 
 export default styled(Box)`
-  margin-top: ${MARGIN[30]}px;
   width: ${WIDTH.HALF}%;
+  height: ${HEIGHT.FULL}%;
   @media (max-width: 650px) {
-    width: ${WIDTH[70]}%;
+    width: ${WIDTH.HALF}%;
   }
   @media (max-width: 400px) {
     width: ${WIDTH.FULL}%;
+    margin-top: 30px;
+    order: 2;
   }
 `

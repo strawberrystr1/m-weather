@@ -10,7 +10,7 @@ export const BoxFlex = styled(Box)`
 `
 
 export const TodoTime = styled(Typography)`
-  width: ${WIDTH.TODO_TIME}%;
+  width: ${WIDTH[70]}px;
   text-align: center;
 `
 

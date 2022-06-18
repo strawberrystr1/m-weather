@@ -1,7 +1,7 @@
 import { GOOGLE_CALENDAR_URL } from '@constants/api'
 import { ICalendarResponse } from '@interfaces/api'
 import { AppDispatch } from '@redux/index'
-import { getTodos } from '@redux/actions/userActions'
+import { getTodos, logoutUser } from '@redux/actions/userActions'
 import { getISOStringForAPI, parseDateFromISOString } from '@utils/dateHandlers'
 
 export default async (token: string, dispatch: AppDispatch) => {
@@ -12,6 +12,11 @@ export default async (token: string, dispatch: AppDispatch) => {
       Authorization: `Bearer ${token}`,
     },
   })
+
+  if (response.status !== 200) {
+    dispatch(logoutUser('logout'))
+    return
+  }
 
   const data: ICalendarResponse = await response.json()
 

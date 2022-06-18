@@ -6,7 +6,7 @@ import IProps from './types'
 
 const WeekWeather = ({ weather }: IProps) => {
   return (
-    <BoxFlexRow sx={{ width: '70%' }}>
+    <BoxFlexRow sx={{ width: '70%', flexWrap: 'wrap' }}>
       {weather.map(day => (
         <WeatherCard
           today={false}

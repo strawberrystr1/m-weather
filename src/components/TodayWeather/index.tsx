@@ -7,15 +7,7 @@ import IProps from './types'
 const TodayWeather = ({ weather }: IProps) => {
   return (
     <TodayBox>
-      {weather && (
-        <>
-          <TodayImage
-            src={`${OPENWEATHER_API_IMG_URL}${weather.icon}@2x.png`}
-            alt="current weather"
-          />
-          <WeatherCard today day="today" temperature={weather.temp} />
-        </>
-      )}
+      {weather && <WeatherCard icon={weather.icon} today day="today" temperature={weather.temp} />}
     </TodayBox>
   )
 }

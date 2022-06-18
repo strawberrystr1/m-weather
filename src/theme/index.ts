@@ -20,7 +20,11 @@ export const WIDTH = {
   TODO_TIME: 12,
   TIME_WRAPPER: 35,
   TODAY_WRAPPER: 20,
+  16: 16,
+  33: 33,
+  40: 40,
   HALF: 50,
+  70: 70,
   FULL: 100,
 }
 
@@ -32,9 +36,15 @@ export const HEIGHT = {
 
 export const FONT_SIZE = {
   TIME_SIZE: 80,
+  TIME_SIZE_650: 50,
   TIME_FORMAT: 30,
+  TIME_FORMAT_650: 20,
   TIME_DATE: 22,
+  TIME_DATE_650: 18,
   TODO_DESC: 16,
+  CITY_650: 34,
+  CITY_400: 44,
+  COUNTRY_650: 26,
 }
 
 export const FONT_WEIGHT = {

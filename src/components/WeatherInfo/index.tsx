@@ -1,7 +1,6 @@
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
-import BoxWrapper from '@components/styled'
 import { WEATHER_BG_COLOR } from '@theme/index'
 import TodayWeather from '@components/TodayWeather'
 import WeekWeather from '@components/WeekWeather'
@@ -9,6 +8,8 @@ import { weatherByIP } from '@redux/actions/userActions'
 import { RootState } from '@redux/index'
 import { WeatherKeys } from '@redux/reducers/types'
 import { Typography } from '@mui/material'
+
+import BoxWrapper from './styled'
 
 const WeatherInfo = () => {
   const dispatch = useDispatch()

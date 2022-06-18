@@ -35,4 +35,4 @@ export const changePicture = (payload: string) => ({ type: SET_PICTURE, payload 
 export const setCountry = (payload: string) => ({ type: SET_COUNTRY, payload })
 export const loadingOn = () => ({ type: LOADING_ON })
 export const loadingOff = () => ({ type: LOADING_OFF })
-export const logoutUser = () => ({ type: LOGOUT })
+export const logoutUser = (payload: string) => ({ type: LOGOUT, payload })

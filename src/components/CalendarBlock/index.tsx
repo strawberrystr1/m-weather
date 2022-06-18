@@ -9,6 +9,8 @@ import Clock from '@components/Clock'
 import loadCalendar from '@api/calendar'
 import { logoutUser } from '@redux/actions/userActions'
 
+import CalendarWrapper from './styled'
+
 const CalendarBlock = () => {
   const { token } = useSelector((state: RootState) => state.user)
   const dispatch = useDispatch()
@@ -19,10 +21,10 @@ const CalendarBlock = () => {
     }
   }, [token])
 
-  const handleLogout = () => dispatch(logoutUser())
+  const handleLogout = () => dispatch(logoutUser('logout'))
 
   return (
-    <Box sx={{ width: '40%', height: '100%' }}>
+    <CalendarWrapper>
       <Clock />
       {token && (
         <>
@@ -33,11 +35,11 @@ const CalendarBlock = () => {
         </>
       )}
       {!token && (
-        <Button variant="contained" sx={{ marginTop: '20px' }} onClick={getToken}>
+        <Button size="small" variant="contained" sx={{ marginTop: '20px' }} onClick={getToken}>
           Login to load calendar
         </Button>
       )}
-    </Box>
+    </CalendarWrapper>
   )
 }
 

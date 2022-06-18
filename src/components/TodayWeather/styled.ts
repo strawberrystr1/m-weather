@@ -4,12 +4,13 @@ import { HEIGHT, WIDTH } from '@theme/index'
 
 export const TodayBox = styled(Box)`
   height: ${HEIGHT.FULL}%;
-  width: ${WIDTH.TODAY_WRAPPER}%;
+  width: ${WIDTH.CITY_WRAPPER}%;
   display: flex;
   align-items: center;
+  justify-content: center;
 `
 
 export const TodayImage = styled.img`
   height: auto;
-  width: ${WIDTH.HALF}%;
+  width: ${WIDTH[40]}%;
 `

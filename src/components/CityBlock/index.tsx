@@ -1,18 +1,13 @@
-import { TextField, Typography } from '@mui/material'
 import { useSelector, useDispatch } from 'react-redux'
 
 import APIChoiseBlock from '@components/APIChoiseBlock'
 import { setCurrentCity, setPreviousCity } from '@redux/actions/userActions'
 import { RootState } from '@redux/index'
-import { WIDTH } from '@theme/index'
 
-import BoxWrapper from './styled'
+import BoxWrapper, { City, CityInput, Country } from './styled'
 
 const CityBlock = () => {
-  const {
-    user: { currentCity, country },
-    weather,
-  } = useSelector((state: RootState) => state)
+  const { currentCity, country } = useSelector((state: RootState) => state.user)
   const dispatch = useDispatch()
 
   const handleCityChange = (e: React.KeyboardEvent<HTMLInputElement>) => {
@@ -24,14 +19,9 @@ const CityBlock = () => {
 
   return (
     <BoxWrapper>
-      <Typography variant="subtitle1">{currentCity}</Typography>
-      <Typography variant="subtitle2">{country}</Typography>
-      <TextField
-        variant="standard"
-        placeholder={currentCity}
-        sx={{ marginTop: '20px', width: `${WIDTH.HALF}%` }}
-        onKeyDown={handleCityChange}
-      />
+      <City variant="subtitle1">{currentCity}</City>
+      <Country variant="subtitle2">{country}</Country>
+      <CityInput variant="standard" placeholder={currentCity} onKeyDown={handleCityChange} />
       <APIChoiseBlock />
     </BoxWrapper>
   )
